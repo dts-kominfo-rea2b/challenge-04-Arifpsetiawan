@@ -8,7 +8,22 @@ const dates = [
 ];
 
 // TODO: Buatlah fungsi createDate
-const createDate = null;
+// sort dates ascending
+const createDate = (date, index) => {
+  const resultEpoch = [];
+  if (index === undefined) {
+    for (let i = 0; i < date.length; i++) {
+      const result = new Date(date[i]).getTime() / 1000;
+      resultEpoch.push(result);
+    }
+    resultEpoch.sort((a, b) => a - b);
+    return resultEpoch.join("-");
+  } else {
+    const result = new Date(date[index]).getTime() / 1000;
+    resultEpoch.push(result);
+    return resultEpoch.join("-");
+  }
+};
 
 // ! JANGAN DIMODIFIKASI
 (() => {
